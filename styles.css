@@ -1,0 +1,111 @@
+:root {
+  --bg: #262631;
+  --main-color: #f3f3f3;
+  --second-color: #326631;
+  --third-color: #A8A8A8;
+  --fourth-color: #6A6A6A;
+  --highlight: #66314D;
+
+  --test1: #7EAA73;
+  --test2: #8573AA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 20%);
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--main-color);
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+}
+
+/* Base */
+
+main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+main > section {
+  width: 50vw;
+  background-color: var(--bg);
+}
+
+@media (max-width: 970px) {
+  main > section {
+    width: 100vw;
+  }
+}
+
+main > aside {
+  width: 50vw;
+}
+
+@media (max-width: 970px) {
+  main > aside {
+    display: none;
+  }
+}
+
+main > aside > img {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: right top;
+}
+
+/* End of Base */
+
+main > section {
+  padding: 4% 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 970px) {
+  main > section {
+    padding: 8% 6%;
+  }
+}
+
+section > .logo {
+  display: flex;
+}
+
+section > .logo > img {
+  width: 60%;
+}
+
+section > .content {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+main > section > .content > p:nth-of-type(1) {
+  color: var(--second-color);
+  font-size: calc(1rem + .9vw);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+}
+
+main > section > .content > p:nth-of-type(2) {
+  font-size: calc(.7rem + .6vw);
+  font-weight: 700;
+}
+
+main > section > .content > p:nth-of-type(3) {
+  font-size: calc(.6rem + .6vw);
+  font-weight: 300;
+  line-height: 1.5rem;
+  letter-spacing: .075rem;
+}
