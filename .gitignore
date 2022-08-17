@@ -34,3 +34,4 @@ yarn-error.log*
 /reference
 /versions
 /downloads
+/tests

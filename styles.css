@@ -6,6 +6,9 @@
   --fourth-color: #6A6A6A;
   --highlight: #66314D;
 
+  --main-font: 'League Spartan', sans-serif;
+  --second-font: 'Work Sans', sans-serif;
+
   --test1: #7EAA73;
   --test2: #8573AA;
 }
@@ -14,14 +17,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid rgba(0, 0, 0, 20%);
-  overflow: hidden; */
 }
 
 body {
   background-color: var(--bg);
+  font-family: var(--main-font);
   color: var(--main-color);
-  font-family: 'League Spartan', sans-serif;
   font-size: 1rem;
 }
 
@@ -29,23 +30,30 @@ body {
 
 main {
   display: flex;
-  width: 100vw;
-  height: 100vh;
 }
 
+/* main > section > * {
+  border: 1px solid rgba(0, 0, 0, 20%);
+} */
+
 main > section {
-  width: 50vw;
+  width: 50%;
+  height: 100vh;
   background-color: var(--bg);
+  padding: 4% 3%;
+  z-index: 1;
 }
 
 @media (max-width: 970px) {
   main > section {
-    width: 100vw;
+    width: 100%;
+    padding: 8% 6%;
   }
 }
 
 main > aside {
-  width: 50vw;
+  width: 50%;
+  height: 100vh;
 }
 
 @media (max-width: 970px) {
@@ -55,7 +63,7 @@ main > aside {
 }
 
 main > aside > img {
-  position: absolute;
+  display: flex;
   width: 50vw;
   height: 100vh;
   object-fit: cover;
@@ -64,37 +72,25 @@ main > aside > img {
 
 /* End of Base */
 
-main > section {
-  padding: 4% 3%;
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 970px) {
-  main > section {
-    padding: 8% 6%;
-  }
-}
-
-section > .logo {
+main > section > .logo {
   display: flex;
 }
 
-section > .logo > img {
+main > section > .logo > img {
   width: 60%;
+  min-width: 18rem;
 }
 
-section > .content {
-  margin-top: 6rem;
-  display: flex;
-  flex-direction: column;
+main > section > .content {
+  margin-top: calc(1rem + 9vh);
+  display: grid;
   gap: .6rem;
 }
 
 main > section > .content > p:nth-of-type(1) {
   color: var(--second-color);
   font-size: calc(1rem + .9vw);
-  font-family: 'Work Sans', sans-serif;
+  font-family: var(--second-font);
   font-weight: 700;
 }
 
@@ -108,4 +104,51 @@ main > section > .content > p:nth-of-type(3) {
   font-weight: 300;
   line-height: 1.5rem;
   letter-spacing: .075rem;
+}
+
+main > section > form {
+  display: grid;
+  margin-top: calc(1rem + 5vh);
+  gap: 1rem;
+}
+
+main > section > form > label {
+  font-size: calc(.6rem + .6vw);
+}
+
+main > section > form > div {
+  display: flex;
+  width: 120%;
+}
+
+@media (max-width: 970px) {
+  main > section > form > div {
+    width: 100%;
+  }
+}
+
+main > section > form > div > input {
+  padding: 1rem;
+  border: none;
+  border-left: .5rem solid var(--second-color);
+  font-family: var(--main-font);
+  font-size: calc(.6rem + .6vw);
+  width: 100%;
+}
+
+main > section > form > div > button {
+  display: flex;
+  background-color: var(--second-color);
+  border: none;
+  padding: 0 1.65rem;
+  place-items: center;
+  background-image: url('./assets/send.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+main > section> form > div > button > span {
+  text-indent: -9999px;
 }
