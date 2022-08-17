@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid rgba(0, 0, 0, 20%); */
 }
 
 body {
@@ -31,10 +32,6 @@ body {
 main {
   display: flex;
 }
-
-/* main > section > * {
-  border: 1px solid rgba(0, 0, 0, 20%);
-} */
 
 main > section {
   width: 50%;
@@ -72,11 +69,17 @@ main > aside > img {
 
 /* End of Base */
 
-main > section > .logo {
+main > section > .logo > a {
   display: flex;
+  transition: filter 150ms ease-in-out, transform 150ms ease-in-out;
 }
 
-main > section > .logo > img {
+main > section > .logo > a:hover {
+  filter: brightness(1.2);
+  transform: scale(1.02);
+}
+
+main > section > .logo > a > img {
   width: 60%;
   min-width: 18rem;
 }
@@ -143,27 +146,29 @@ main > section > form > div > button {
   padding: 0 1.65rem;
   place-items: center;
   background-image: url('./assets/send.svg');
-  background-size: 60%;
+  background-size: 2rem;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  transition: padding 150ms ease-in-out, filter 150ms ease-in-out;
+}
+
+main > section > form > div > button:hover {
+  padding: 0 2.5rem;
+  filter: brightness(1.4);
 }
 
 main > section> form > div > button > span {
   text-indent: -9999px;
 }
 
-/* main > section > .link,
-main > section > .link > *,
-main > section > .link > * > * {
-  border: 1px solid rgba(0, 0, 0, 20%);
-} */
-
 main > section > .link {
   margin-top: 2rem;
+  width: max-content;
 }
 
 main > section > .link > a {
+  position: relative;
   display: flex;
   align-items: center;
 
@@ -172,6 +177,22 @@ main > section > .link > a {
 
   font-size: calc(.65rem + .65vw);
   font-weight: 700;
+}
+
+main > section > .link > a::before {
+  content: '';
+  width: 0%;
+  height: .15rem;
+
+  position: absolute;
+  top: 1.7rem;
+  transition: width 150ms ease-in-out;
+
+  background-color: var(--second-color);
+}
+
+main > section > .link > a:hover::before {
+  width: 100%;
 }
 
 main > section > .link > a > img {
