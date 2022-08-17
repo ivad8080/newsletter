@@ -152,3 +152,28 @@ main > section > form > div > button {
 main > section> form > div > button > span {
   text-indent: -9999px;
 }
+
+/* main > section > .link,
+main > section > .link > *,
+main > section > .link > * > * {
+  border: 1px solid rgba(0, 0, 0, 20%);
+} */
+
+main > section > .link {
+  margin-top: 2rem;
+}
+
+main > section > .link > a {
+  display: flex;
+  align-items: center;
+
+  color: var(--second-color);
+  text-decoration: none;
+
+  font-size: calc(.65rem + .65vw);
+  font-weight: 700;
+}
+
+main > section > .link > a > img {
+  margin-left: .5rem;
+}
